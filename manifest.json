@@ -1,0 +1,17 @@
+{
+	"name":	"Quick Open for Linguists",
+	"version": "0.1",
+	"description":	"Quickly open pages related to a project / task",
+	"permissions":	[
+		"tabs",
+		"contextMenus"
+	],
+	"background":	{
+		"service_worker":	"background.js"
+	},
+	"content_scripts": [{
+		"matches":	["*://*.google.com/*", "*://*.android.com/*"],
+		"js":	["contentScript.js"]
+	}],
+	"manifest_version":	3
+}
