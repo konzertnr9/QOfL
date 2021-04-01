@@ -1,1 +1,1 @@
-# QOfL
+# Quick Open for Linguists
