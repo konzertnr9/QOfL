@@ -4,6 +4,8 @@ function dEBCN(elm) {
 
 function devSitePage() {
   const hosts = {
+    'Android': ['developer.android.com', 'source.android.com'],
+    'Apigee': 'docs.apigee.com',
     'Cloud Platform': 'cloud.google.com',
     'Cloud Platform Priority 1': 'cloud.google.com',
     'Cloud Platform Priority 2': 'cloud.google.com',
@@ -12,9 +14,8 @@ function devSitePage() {
     'Cloud Marketing & Sales': 'cloud.google.com',
     'Cloud Technical Marketing': 'cloud.google.com',
     'Firebase': 'firebase.google.com',
-    'Apigee': 'docs.apigee.com',
+    'Maps': 'developers.google.com',
     'Search Console': 'developers.google.com',
-    'Android': ['developer.android.com', 'source.android.com'],
   };
   const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
   const locale = title_arr.shift();
@@ -139,14 +140,13 @@ function helpArticlePage() {
     'Cloud Technical Marketing': 'googlecloud',
     'Docs': 'docs',
     'Duo': 'duo',
-    'Family Link': 'families',
     'GAIA': 'accounts',
     'Gmail': 'mail',
     'Google Assistant': 'assistant',
     'Google Domains': 'domains',
     'Google Fi': 'fi',
     'Google My Business (GMB)': 'business',
-    'Google Play': 'play',
+    'Google Play': ['googleplay', 'googleplay/android-developer'],
     'Google One': 'googleone',
     'Google Store': 'store',
     'Hangouts': 'hangouts',
@@ -159,6 +159,7 @@ function helpArticlePage() {
     'Search (GWS)': 'websearch',
     'Search Console': 'webmasters',
     'Shopping Merchants and Brands': 'merchants',
+    'Unicorn': 'families',
     'YouTube': 'youtube',
     'YouTube Creator': 'youtube',
     'YouTube MT Pilot': 'youtube',
