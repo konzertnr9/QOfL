@@ -16,6 +16,7 @@ function devSitePage() {
     'Firebase': 'firebase.google.com',
     'Maps': 'developers.google.com',
     'Search Console': 'developers.google.com',
+    'Tensorflow': 'www.tensorflow.org',
   };
   const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
   const locale = title_arr.shift();
