@@ -64,6 +64,10 @@ function devSitePage() {
     }
     return ret_val.join(',');
   } else {
+    if (!hosts[product]) { // Product not found
+      alert('Product not supported.');
+      return false;
+    }
     url = 
         'https://' + hosts[product] + '/' + path_arr.join('/') + 
         '?hl=' + locale;
@@ -195,6 +199,10 @@ function helpArticlePage() {
     }
     return ret_val.join(',');
   } else {
+    if (!dirs[product]) { // Product not found
+      alert('Product not supported.');
+      return false;
+    }
     url = 
         'https://support.google.com/' + dirs[product] + '/answer/' + sel + 
         '?hl=' + locale;
