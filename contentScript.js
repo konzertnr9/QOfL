@@ -182,6 +182,7 @@ function helpArticlePage() {
     'Search Console': 'webmasters',
     'Shopping Merchants and Brands': 'merchants',
     'Unicorn': 'families',
+    'WiFi': 'wifi',
     'YouTube': 'youtube',
     'YouTube Creator': 'youtube',
     'YouTube MT Pilot': 'youtube',
