@@ -174,6 +174,7 @@ function helpArticlePage() {
     'Hangouts Meet': 'meet',
     'Magnolia': 'fundingchoices',
     'Maps': 'maps',
+    'Nest': 'googlenest',
     'Optimize': 'optimize',
     'Payments': ['pay', 'paymentscenter'],
     'Photos': 'photos',
