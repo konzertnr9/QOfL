@@ -217,7 +217,7 @@ function helpArticlePage() {
 function lqePage() {
   const url_arr = window.location.href.split('/');
   const url = 
-      'https://localization.google.com/lqe/arbitration/' + 
+      'https://localization.google.com/polyglot/lqe/arbitration/' + 
       url_arr[url_arr.length - 1];
   return window.open(url) ? url : false;
 }
