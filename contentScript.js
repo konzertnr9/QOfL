@@ -146,6 +146,7 @@ function helpArticlePage() {
     'Calendar':  'calendar',
     'Campaign Manager': 'campaignmanager',
     'Chrome': 'chrome',
+    'Classroom': 'edu/classroom',
     'Cloud Platform': 'googlecloud',
     'Cloud Platform Priority 1': 'googlecloud',
     'Cloud Platform Priority 2': 'googlecloud',
