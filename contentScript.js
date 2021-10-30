@@ -170,6 +170,7 @@ function helpArticlePage() {
     'Google One': 'googleone',
     'Google Store': 'store',
     'Google Tag Manager': 'tagmanager',
+    'Groups': 'groups',
     'Hangouts': 'hangouts',
     'Hangouts Chat': 'chat',
     'Hangouts Meet': 'meet',
