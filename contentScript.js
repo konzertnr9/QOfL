@@ -158,7 +158,7 @@ function helpArticlePage() {
     'Data Studio': 'datastudio',
     'Display & Video 360': 'displayvideo',
     'Display Platforms': 'displayspecs',
-    'Docs': 'docs',
+    'Docs': ['docs', 'drive', 'sites'],
     'Duo': 'duo',
     'GAIA': 'accounts',
     'Gmail': 'mail',
