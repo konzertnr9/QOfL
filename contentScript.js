@@ -103,7 +103,11 @@ function enPage() {
 }
 
 function projectPage() {
-  const project_id = dEBCN('ZY4IA')[0].getAttribute('title').split('_')[2];
+  const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
+  let project_id = title_arr[2];
+  if (title_arr[1].match(/n[0-9]+/)) {
+    project_id = dEBCN('ZY4IA')[0].getAttribute('title').split('_')[1];
+  }
   const url = 
       'https://localization.google.com/polyglot?project_id=' + project_id;
   return window.open(url) ? url : false;
