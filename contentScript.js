@@ -2,6 +2,29 @@ function dEBCN(elm) {
   return document.getElementsByClassName(elm);
 }
 
+function getLocale() {
+  const target_segment = dEBCN('smDXjd')[0]; // Get the first target segment, expected to fail on dropbox tasks
+  return target_segment ? target_segment.getAttribute('lang') : dEBCN('ZY4IA')[0].getAttribute('title').split('_')[0];
+}
+
+function getTaskData() {
+  const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
+  const locale = getLocale();
+  if (locale == title_arr[0]) {
+    title_arr.shift();
+  }
+  const product = title_arr.shift();
+  const project_id = title_arr.shift();
+  const raw_path = title_arr.join('_');
+  const task_data = {
+    'locale': locale,
+    'product': product,
+    'project_id': project_id,
+    'raw_path': raw_path,
+  };
+  return task_data;
+}
+
 function devSitePage() {
   const hosts = {
     'Android': ['developer.android.com', 'source.android.com'],
@@ -19,12 +42,11 @@ function devSitePage() {
     'Search Console': 'developers.google.com',
     'Tensorflow': 'www.tensorflow.org',
   };
-  const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
-  const locale = title_arr.shift();
-  const product = title_arr.shift();
-  const project_id = title_arr.shift();
-  const raw_path = title_arr.join('_');
-  let path_arr = raw_path.split('/');
+  const task_data = getTaskData();
+  const locale = task_data['locale'];
+  const product = task_data['product'];
+  const project_id = task_data['project_id'];
+  let path_arr = task_data['raw_path'].split('/');
   path_arr[0] = path_arr[0].replace('Translatable HTML attributes for ', '');
   path_arr[0] = path_arr[0].replace('Meta tags for ', '');
   const file_name = path_arr[path_arr.length - 1];
@@ -103,21 +125,17 @@ function enPage() {
 }
 
 function projectPage() {
-  const title_arr = dEBCN('ZY4IA')[0].getAttribute('title').split('_');
-  let project_id = title_arr[2];
-  if (title_arr[1].match(/n[0-9]+/)) {
-    project_id = dEBCN('ZY4IA')[0].getAttribute('title').split('_')[1];
-  }
+  const task_data = getTaskData();
   const url = 
-      'https://localization.google.com/polyglot?project_id=' + project_id;
+      'https://localization.google.com/polyglot?project_id=' + task_data['project_id'];
   return window.open(url) ? url : false;
 }
 
 function helpArticlePage() {
   const sel = window.getSelection().toString();
-  let locale, product, project_id, raw_path;
-  [locale, product, project_id, raw_path] = 
-      dEBCN('ZY4IA')[0].getAttribute('title').split('_');
+  const task_data = getTaskData();
+  const locale = task_data['locale'];
+  const product = task_data['product'];
   let url;
   if (~sel.indexOf('/')) {
     if (sel.indexOf('answer') == -1) {
@@ -229,8 +247,8 @@ function lqePage() {
 }
 
 function qmPage() {
-  const project_id = dEBCN('ZY4IA')[0].getAttribute('title').split('_')[2];
-  const url = 'https://gloc-qm.appspot.com/?show_all=yes&search=' + project_id;
+  const task_data = getTaskData();
+  const url = 'https://gloc-qm.appspot.com/?show_all=yes&search=' + task_data['project_id'];
   return window.open(url) ? url : false;
 }
 
