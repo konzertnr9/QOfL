@@ -6,8 +6,8 @@ From Polyglot task screen:
 - Open Polyglot project (task list)
 - Open LQE report (Arbitration UI)
 - Open DevSite page (live page corresponding to the task)
-- Open QM queries (by project number)
-- Search in QM (by selected string)
+- Open QMv1 queries (by project number)
+- Search in QMv1 (by selected string)
 - Open Help article (by selected article number / path)
 
 From \*.google.com / \*.android.com / \*.tensorflow.org:

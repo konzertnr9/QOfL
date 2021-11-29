@@ -25,13 +25,13 @@ chrome.runtime.onInstalled.addListener(() => {
   });
   chrome.contextMenus.create({
     id: 'QM',
-    title: 'Open QM queries',
+    title: 'Open QMv1 queries',
     contexts: ['page'],
     documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'QMSearch',
-    title: 'Search in QM',
+    title: 'Search in QMv1',
     contexts: ['selection'],
     documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
   });
