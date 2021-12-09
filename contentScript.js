@@ -192,6 +192,7 @@ function helpArticlePage() {
     'Google One': 'googleone',
     'Google Store': 'store',
     'Google Tag Manager': 'tagmanager',
+    'Google Workspace': 'a',
     'Groups': 'groups',
     'Hangouts': 'hangouts',
     'Hangouts Chat': 'chat',
