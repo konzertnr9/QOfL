@@ -39,7 +39,7 @@ chrome.runtime.onInstalled.addListener(() => {
     id: 'en',
     title: 'Open EN page',
     contexts: ['page'],
-    documentUrlPatterns: ['*://*.google.com/*', '*://*.android.com/*', '*://*.tensorflow.org/*'],
+    documentUrlPatterns: ['*://*.google.com/*', '*://*.android.com/*', '*://*.tensorflow.org/*', '*://*.apigee.com/*'],
   });
 });
 chrome.contextMenus.onClicked.addListener((itemData) => {
