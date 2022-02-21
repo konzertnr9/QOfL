@@ -147,10 +147,14 @@ function helpArticlePage() {
       }
     }
     let art = sel;
+    let hash;
     if (sel.indexOf('/') > 0) {
       art = '/' + art;
     }
-    url = 'https://support.google.com' + art + '?hl=' + locale;
+    if (art.indexOf('#') > 0) {
+      [art, hash] = art.split('#');
+    }
+    url = 'https://support.google.com' + art + '?hl=' + locale + (hash ? '#' + hash : '');
     return window.open(url) ? url : false;
   }
   const dirs = {
