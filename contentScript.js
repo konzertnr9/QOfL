@@ -27,6 +27,7 @@ function getTaskData() {
 
 function devSitePage() {
   const hosts = {
+    'Ad Manager': 'developers.google.com',
     'Android': ['developer.android.com', 'source.android.com'],
     'Apigee': 'docs.apigee.com',
     'Cloud Platform': 'cloud.google.com',
