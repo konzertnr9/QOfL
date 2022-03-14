@@ -197,7 +197,7 @@ function helpArticlePage() {
     'Google One': 'googleone',
     'Google Store': 'store',
     'Google Tag Manager': 'tagmanager',
-    'Google Workspace': ['a', 'jamboard'],
+    'Google Workspace': ['a', 'jamboard', 'channelservices'],
     'Groups': 'groups',
     'Hangouts': 'hangouts',
     'Hangouts Chat': 'chat',
