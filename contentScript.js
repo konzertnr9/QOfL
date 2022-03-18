@@ -40,6 +40,7 @@ function devSitePage() {
     'Cloud-MT Pilot': 'cloud.google.com',
     'Firebase': 'firebase.google.com',
     'Maps': 'developers.google.com',
+    'News': 'developers.google.com',
     'Search Console': 'developers.google.com',
     'Tensorflow': 'www.tensorflow.org',
   };
