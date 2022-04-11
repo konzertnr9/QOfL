@@ -162,6 +162,7 @@ function helpArticlePage() {
   }
   const dirs = {
     'Allo': 'allo',
+    'Accessibility Checker': 'pixelphonekb',
     'Ad Grants': 'grants',
     'Ad Manager': 'admanager',
     'AdMob': 'admob',
