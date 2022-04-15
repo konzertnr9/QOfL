@@ -3,37 +3,37 @@ chrome.runtime.onInstalled.addListener(() => {
     id: 'Project',
     title: 'Open Polyglot project',
     contexts: ['page'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'LQE',
     title: 'Open LQE report',
     contexts: ['page'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'devSite',
     title: 'Open DevSite page',
     contexts: ['page'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'help',
     title: 'Open Help article',
     contexts: ['selection'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'QM',
     title: 'Open QMv1 queries',
     contexts: ['page'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'QMSearch',
     title: 'Search in QMv1',
     contexts: ['selection'],
-    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
     id: 'en',

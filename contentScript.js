@@ -250,9 +250,12 @@ function helpArticlePage() {
 
 function lqePage() {
   const url_arr = window.location.href.split('/');
+  const task_id = url_arr[url_arr.length - 1];
+  const user_prof = url_arr[url_arr.length - 4] == 'u' ? url_arr[url_arr.length - 3] : false; // Support for account switching
   const url = 
-      'https://localization.google.com/polyglot/lqe/arbitration/' + 
-      url_arr[url_arr.length - 1];
+      'https://localization.google.com/polyglot/' + 
+      (user_prof ? 'u/' + user_prof + '/' : '') + // Support for account switching
+      'lqe/arbitration/' + task_id;
   return window.open(url) ? url : false;
 }
 
