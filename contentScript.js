@@ -221,6 +221,7 @@ function helpArticlePage() {
     'Search (GWS)': 'websearch',
     'Search Ads 360': 'searchads',
     'Search Console': 'webmasters',
+    'Shopping Merchant': 'merchants',
     'Shopping Merchants and Brands': 'merchants',
     'Unicorn': 'families',
     'WiFi': 'wifi',
