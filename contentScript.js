@@ -130,8 +130,12 @@ function enPage() {
 
 function projectPage() {
   const task_data = getTaskData();
+  const url_arr = window.location.href.split('/');
+  const user_prof = url_arr[url_arr.length - 4] == 'u' ? url_arr[url_arr.length - 3] : false; // Support for account switching
   const url = 
-      'https://localization.google.com/polyglot?project_id=' + task_data['project_id'];
+      'https://localization.google.com/polyglot' + 
+      (user_prof ? '/u/' + user_prof + '/' : '') + // Support for account switching
+      '?project_id=' + task_data['project_id'];
   return window.open(url) ? url : false;
 }
 
