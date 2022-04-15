@@ -259,6 +259,17 @@ function lqePage() {
   return window.open(url) ? url : false;
 }
 
+function taskPage() {
+  const url_arr = window.location.href.split('/');
+  const task_id = url_arr[url_arr.length - 1];
+  const user_prof = url_arr[url_arr.length - 5] == 'u' ? url_arr[url_arr.length - 4] : false; // Support for account switching
+  const url = 
+      'https://localization.google.com/polyglot/' + 
+      (user_prof ? 'u/' + user_prof + '/' : '') + // Support for account switching
+      'tasks/' + task_id;
+  return window.open(url) ? url : false;
+}
+
 function qmPage() {
   const task_data = getTaskData();
   const url = 'https://gloc-qm.appspot.com/?show_all=yes&search=' + task_data['project_id'];
@@ -288,6 +299,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       break;
     case 'openLqePage':
       sendResponse(lqePage());
+      break;
+    case 'openTaskPage':
+      sendResponse(taskPage());
       break;
     case 'openQMPage':
       sendResponse(qmPage());

@@ -12,6 +12,12 @@ chrome.runtime.onInstalled.addListener(() => {
     documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
+    id: 'Task',
+    title: 'Open Polyglot task',
+    contexts: ['page'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/lqe/arbitration/*', 'https://localization.google.com/polyglot/u/*/lqe/arbitration/*'],
+  });
+  chrome.contextMenus.create({
     id: 'devSite',
     title: 'Open DevSite page',
     contexts: ['page'],
@@ -55,6 +61,14 @@ chrome.contextMenus.onClicked.addListener((itemData) => {
     case 'LQE':
       chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {message: 'openLqePage'}, 
+            (res) => {
+          console.log(res);
+        });
+      });
+      break;
+    case 'Task':
+      chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {message: 'openTaskPage'}, 
             (res) => {
           console.log(res);
         });
