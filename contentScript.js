@@ -156,13 +156,34 @@ function helpArticlePage() {
     }
     let art = sel;
     let hash;
+    let cur_qs;
+    let new_qs = 'hl=' + locale;
     if (sel.indexOf('/') > 0) {
       art = '/' + art;
     }
     if (art.indexOf('#') > 0) {
       [art, hash] = art.split('#');
     }
-    url = 'https://support.google.com' + art + '?hl=' + locale + (hash ? '#' + hash : '');
+    if (art.indexOf('?') > 0) {
+      [art, cur_qs] = art.split('?');
+    }
+    if (cur_qs) {
+      let qs_arr = cur_qs.split('&');
+      let lang_flg = false;
+      let k, v;
+      for (let i = 0; i < qs_arr.length; i++) {
+        [k, v] = qs_arr[i].split('=');
+        if (k == 'hl') {
+          qs_arr[i] = 'hl=' + locale;
+          lang_flg = true;
+        }
+      }
+      if (!lang_flg) {
+        qs_arr.push('hl=' + locale);
+      }
+      new_qs = qs_arr.join('&');
+    }
+    url = 'https://support.google.com' + art + '?' + new_qs + (hash ? '#' + hash : '');
     return window.open(url) ? url : false;
   }
   const dirs = {
