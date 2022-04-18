@@ -25,6 +25,27 @@ function getTaskData() {
   return task_data;
 }
 
+function setLocale(cur_qs, locale) {
+  let new_qs = 'hl=' + locale;
+  if (cur_qs) {
+    let qs_arr = cur_qs.split('&');
+    let lang_flg = false;
+    let k, v;
+    for (let i = 0; i < qs_arr.length; i++) {
+      [k, v] = qs_arr[i].split('=');
+      if (k == 'hl') {
+        qs_arr[i] = 'hl=' + locale;
+        lang_flg = true;
+      }
+    }
+    if (!lang_flg) {
+      qs_arr.push('hl=' + locale);
+    }
+    new_qs = qs_arr.join('&');
+  }
+  return new_qs;
+}
+
 function devSitePage() {
   const hosts = {
     'Ad Manager': 'developers.google.com',
@@ -105,23 +126,7 @@ function devSitePage() {
 function enPage() {
   const loc = window.location;
   const cur_qs = loc.search.slice(1);
-  let new_qs = 'hl=en';
-  if (cur_qs) {
-    let qs_arr = cur_qs.split('&');
-    let lang_flg = false;
-    let k, v;
-    for (let i = 0; i < qs_arr.length; i++) {
-      [k, v] = qs_arr[i].split('=');
-      if (k == 'hl') {
-        qs_arr[i] = 'hl=en';
-        lang_flg = true;
-      }
-    }
-    if (!lang_flg) {
-      qs_arr.push('hl=en');
-    }
-    new_qs = qs_arr.join('&');
-  }
+  const new_qs = setLocale(cur_qs, 'en');
   const url = 
       loc.protocol + '//' + loc.host + loc.pathname + 
       '?' + new_qs + (loc.hash ? loc.hash : '');
@@ -157,7 +162,6 @@ function helpArticlePage() {
     let art = sel;
     let hash;
     let cur_qs;
-    let new_qs = 'hl=' + locale;
     if (sel.indexOf('/') > 0) {
       art = '/' + art;
     }
@@ -167,22 +171,7 @@ function helpArticlePage() {
     if (art.indexOf('?') > 0) {
       [art, cur_qs] = art.split('?');
     }
-    if (cur_qs) {
-      let qs_arr = cur_qs.split('&');
-      let lang_flg = false;
-      let k, v;
-      for (let i = 0; i < qs_arr.length; i++) {
-        [k, v] = qs_arr[i].split('=');
-        if (k == 'hl') {
-          qs_arr[i] = 'hl=' + locale;
-          lang_flg = true;
-        }
-      }
-      if (!lang_flg) {
-        qs_arr.push('hl=' + locale);
-      }
-      new_qs = qs_arr.join('&');
-    }
+    const new_qs = setLocale(cur_qs, locale);
     url = 'https://support.google.com' + art + '?' + new_qs + (hash ? '#' + hash : '');
     return window.open(url) ? url : false;
   }
