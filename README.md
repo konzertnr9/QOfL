@@ -10,6 +10,9 @@ From Polyglot task screen:
 - Search in QMv1 (by selected string)
 - Open Help article (by selected article number / path)
 
+From Arbitration UI screen:
+- Open Polyglot task (to mitigate existing link not working with account switching)
+
 From \*.google.com / \*.android.com / \*.tensorflow.org / \*.apigee.com :
 - Open EN page (hl=en)
 
