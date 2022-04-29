@@ -237,6 +237,7 @@ function helpArticlePage() {
     'WiFi': 'wifi',
     'YouTube': 'youtube',
     'YouTube Creator': 'youtube',
+    'YouTube Kids': 'youtubekids',
     'YouTube MT Pilot': 'youtube',
   };
   if (Array.isArray(dirs[product])) { // Multiple possible directories
