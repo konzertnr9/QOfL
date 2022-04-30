@@ -1,6 +1,8 @@
 # Quick Open for Linguists
 Chrome extension to quickly open various pages related to a Polyglot task from the context menu.
 
+![Screenshot](./images/screenshot.png)
+
 ## Features
 From Polyglot task screen:
 - Open Polyglot project (task list)
