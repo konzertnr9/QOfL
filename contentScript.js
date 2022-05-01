@@ -51,6 +51,7 @@ function devSitePage() {
     'Ad Manager': 'developers.google.com',
     'Android': ['developer.android.com', 'source.android.com'],
     'Apigee': 'docs.apigee.com',
+    'Chrome OS': 'developer.chrome.com',
     'Cloud Platform': 'cloud.google.com',
     'Cloud Platform Priority 1': 'cloud.google.com',
     'Cloud Platform Priority 2': 'cloud.google.com',
