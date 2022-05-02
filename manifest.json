@@ -10,7 +10,7 @@
 		"service_worker":	"background.js"
 	},
 	"content_scripts": [{
-		"matches":	["*://*.google.com/*", "*://*.android.com/*", "*://*.tensorflow.org/*", "*://*.apigee.com/*"],
+		"matches":	["*://*.google.com/*", "*://*.android.com/*", "*://*.tensorflow.org/*", "*://*.apigee.com/*", "*://*.chrome.com/*"],
 		"js":	["contentScript.js"]
 	}],
 	"manifest_version":	3

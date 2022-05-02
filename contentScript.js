@@ -134,6 +134,20 @@ function enPage() {
   return window.open(url) ? url : false;
 }
 
+function enPage2() {
+  const loc = window.location;
+  var path_arr = loc.pathname.split('/');
+  if (path_arr[1].match(/^([a-zA-Z]{2})$/)) {
+    path_arr[1] = 'en';
+  } else {
+    path_arr.splice(1, 0, 'en');
+  }
+  const url = 
+      loc.protocol + '//' + loc.host + path_arr.join('/') + 
+      (loc.search ? '?' + loc.search : '') + (loc.hash ? loc.hash : '');
+  return window.open(url) ? url : false;
+}
+
 function projectPage() {
   const task_data = getTaskData();
   const url_arr = window.location.href.split('/');
@@ -307,6 +321,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       break;
     case 'openEnPage':
       sendResponse(enPage());
+      break;
+    case 'openEnPage2':
+      sendResponse(enPage2());
       break;
     case 'openDevSitePage':
       sendResponse(devSitePage());

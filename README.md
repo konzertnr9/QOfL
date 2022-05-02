@@ -15,8 +15,8 @@ From Polyglot task screen:
 From Arbitration UI screen:
 - Open Polyglot task (to mitigate existing link not working with account switching)
 
-From \*.google.com / \*.android.com / \*.tensorflow.org / \*.apigee.com :
-- Open EN page (hl=en)
+From \*.google.com / \*.android.com / \*.tensorflow.org / \*.apigee.com / \*.chrome.com :
+- Open EN page (hl=en, /en/)
 
 ## FAQ
 **Q:** Devsite page / Help article does not open correctly.  

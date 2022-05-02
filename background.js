@@ -47,6 +47,12 @@ chrome.runtime.onInstalled.addListener(() => {
     contexts: ['page'],
     documentUrlPatterns: ['*://*.google.com/*', '*://*.android.com/*', '*://*.tensorflow.org/*', '*://*.apigee.com/*'],
   });
+  chrome.contextMenus.create({
+    id: 'en2',
+    title: 'Open EN page',
+    contexts: ['page'],
+    documentUrlPatterns: ['*://*.chrome.com/*'],
+  });
 });
 chrome.contextMenus.onClicked.addListener((itemData) => {
   switch (itemData.menuItemId) {
@@ -107,6 +113,13 @@ chrome.contextMenus.onClicked.addListener((itemData) => {
     case 'en':
       chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {message: 'openEnPage'}, (res) => {
+          console.log(res);
+        });
+      });
+      break;
+    case 'en2':
+      chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {message: 'openEnPage2'}, (res) => {
           console.log(res);
         });
       });
