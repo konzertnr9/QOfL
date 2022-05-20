@@ -60,7 +60,7 @@ function devSitePage() {
     'Cloud Marketing & Sales': 'cloud.google.com',
     'Cloud Technical Marketing': 'cloud.google.com',
     'Cloud-MT Pilot': 'cloud.google.com',
-    'DevPlat': 'developers.google.com',
+    'DevPlat': ['developers.google.com', 'firebase.google.com'],
     'Firebase': 'firebase.google.com',
     'Google Assistant': 'developers.google.com',
     'Maps': 'developers.google.com',
