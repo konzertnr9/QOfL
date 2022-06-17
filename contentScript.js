@@ -203,6 +203,7 @@ function helpArticlePage() {
     'Android': 'android',
     'Attribution': 'analytics',
     'Authorized Buyers': 'authotizedbuyers',
+    'Business Profile': 'business',
     'Calendar':  'calendar',
     'Campaign Manager': 'campaignmanager',
     'Chrome': 'chrome',
