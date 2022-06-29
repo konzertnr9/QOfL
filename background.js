@@ -36,8 +36,20 @@ chrome.runtime.onInstalled.addListener(() => {
     documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
   chrome.contextMenus.create({
+    id: 'QM2',
+    title: 'Open QMv2 queries',
+    contexts: ['page'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
+  });
+  chrome.contextMenus.create({
     id: 'QMSearch',
     title: 'Search in QMv1',
+    contexts: ['selection'],
+    documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
+  });
+  chrome.contextMenus.create({
+    id: 'QMSearch2',
+    title: 'Search in QMv2',
     contexts: ['selection'],
     documentUrlPatterns: ['https://localization.google.com/polyglot/tasks/*', 'https://localization.google.com/polyglot/u/*/tasks/*'],
   });
@@ -103,9 +115,23 @@ chrome.contextMenus.onClicked.addListener((itemData) => {
         });
       });
       break;
+    case 'QM2':
+      chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {message: 'openQMPage2'}, (res) => {
+          console.log(res);
+        });
+      });
+      break;
     case 'QMSearch':
       chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {message: 'searchInQm'}, (res) => {
+          console.log(res);
+        });
+      });
+      break;
+    case 'QMSearch2':
+      chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {message: 'searchInQm2'}, (res) => {
           console.log(res);
         });
       });

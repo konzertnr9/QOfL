@@ -308,12 +308,27 @@ function qmPage() {
   return window.open(url) ? url : false;
 }
 
+function qmPage2() {
+  const task_data = getTaskData();
+  const url = 'https://localization.google.com/query?pid=' + task_data['project_id'];
+  return window.open(url) ? url : false;
+}
+
+
 function qmSearch() {
   const url = 
       'https://gloc-qm.appspot.com/?show_all=yes&search=' + 
       encodeURIComponent(window.getSelection().toString());
   return window.open(url) ? url : false;
 }
+
+function qmSearch2() {
+  const url = 
+      'https://localization.google.com/query?text=' + 
+      encodeURIComponent(window.getSelection().toString());
+  return window.open(url) ? url : false;
+}
+
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   switch (request.message) {
@@ -341,8 +356,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     case 'openQMPage':
       sendResponse(qmPage());
       break;
+    case 'openQMPage2':
+      sendResponse(qmPage2());
+      break;
     case 'searchInQm':
       sendResponse(qmSearch());
+      break;
+    case 'searchInQm2':
+      sendResponse(qmSearch2());
       break;
   }
 });
